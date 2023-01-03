@@ -121,7 +121,8 @@ for (let i = 1; i < finances.length; i++) {
   totalChange += finances[i][1] - finances[i-1][1];
 }
 
-averageChange = totalChange / (finances.length - 1);
+let averageChange = totalChange / (finances.length - 1);
+averageChange = averageChange.toFixed(2);
 
 console.log("Average Change: " + averageChange);
 
