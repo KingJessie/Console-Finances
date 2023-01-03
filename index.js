@@ -181,10 +181,10 @@ changeArr.push(lowestProfit);
 console.log("Greatest Decrease: " + lowestProfit.date + " " + lowestProfit.amount);
 
 
-// Add up the total in the new 'changes' array
-// Need a variable to store the rolling total for this array that's different that the rolling total of profits
-// for loop to iterate over the changes array
-// add each element in turn to the rolling total
+//? Add up the total in the new 'changes' array
+//? Need a variable to store the rolling total for this array that's different that the rolling total of profits
+//? for loop to iterate over the changes array
+//? add each element in turn to the rolling total
 
 // Take that 'total changes amount' variable and divide it by the number of elements in the array
 // Look up how to limit the answer to two decimal points
