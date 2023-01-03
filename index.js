@@ -95,7 +95,7 @@ var finances = [
 //! Need a variable to store the value of array.length
 
 console.log("Financial Analysis \n--------------------------");
-monthsTotal = finances.length;
+let monthsTotal = finances.length;
 console.log("Total Months: " + monthsTotal);
 
 // The net total amount of Profit / Losses over the entire period.
@@ -105,12 +105,12 @@ console.log("Total Months: " + monthsTotal);
 // for loop to iterate over the array
 // Inside that for loop, access position 1 of each array element to get the numbers
 
-let net_total = 0;
+let netTotal = 0;
 for (let i = 0; i < finances.length; i++) {
-  net_total += finances[i][1];
+  netTotal += finances[i][1];
 }
 
-console.log("Total: " + net_total);
+console.log("Total: " + netTotal);
 
 //? The average of the changes in Profit / Losses over the entire period.
 //? You will need to track what the total change in profits are from month to month and then find the average.
@@ -127,9 +127,8 @@ averageChange = averageChange.toFixed(2);
 console.log("Average Change: " + averageChange);
 
 
-// The greatest increase in profits(date and amount) over the entire period.
-
-// The greatest decrease in losses(date and amount) over the entire period.
+//* The greatest increase in profits(date and amount) over the entire period.
+//* The greatest decrease in losses(date and amount) over the entire period.
 
 // Total up the differences between each pair of adjoining months & divide by number of array elements
 // for loop starting with i = 1
@@ -143,6 +142,44 @@ console.log("Average Change: " + averageChange);
 // greatest[0] = finances[i][0]
 // greatest[1] = changeArr[i-1]
 // If it's lower than what's already stored in greatest-loss variable, reassign that variable to equal finances[i]
+
+//! The greatest increase in profits(date and amount) over the entire period.
+
+let highestProfit = {
+  date: finances[0][0],
+  amount: finances[0][1] - finances[1][1]
+};
+for (let i = 1; i < finances.length; i++) {
+  let change = finances[i][1] - finances[i-1][1];
+  if (change > highestProfit .amount) {
+    highestProfit.date = finances[i][0];
+    highestProfit.amount = change;
+  }
+}
+
+let changeArr = [];
+changeArr.push(highestProfit);
+console.log("Greatest Increase: " + highestProfit.date + " " + highestProfit.amount);
+
+
+//!The greatest decrease in losses(date and amount) over the entire period.
+
+let lowestProfit =  {
+  date: finances[0][0],
+  amount: finances[0][1] - finances[1][1]
+};
+
+for (let i = 1; i < finances.length; i++) {
+  let change = finances[i][1] - finances[i-1][1];
+  if (change < lowestProfit.amount) {
+    lowestProfit.date = finances[i][0];
+    lowestProfit.amount = change;
+  }
+}
+
+changeArr.push(lowestProfit);
+console.log("Greatest Decrease: " + lowestProfit.date + " " + lowestProfit.amount);
+
 
 // Add up the total in the new 'changes' array
 // Need a variable to store the rolling total for this array that's different that the rolling total of profits
