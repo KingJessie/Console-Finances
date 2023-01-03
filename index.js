@@ -89,25 +89,32 @@ var finances = [
 
 // TODO: PseudoCode: Task is to write JavaScript code that analyzes the records to calculate each of the following:
 
-// The total number of months included in the dataset.
-  // Count up how many things are in the array
-  // array.length
-  // Need a variable to store the value of array.length
+//! The total number of months included in the dataset.
+//! Count up how many things are in the array
+//! array.length
+//! Need a variable to store the value of array.length
 
-    console.log("Financial Analysis \n------------------")
+    console.log("Financial Analysis \n--------------------------")
     monthsTotal = finances.length
-    console.log(monthsTotal)
+    console.log("Total Months: " + monthsTotal)
 
 // The net total amount of Profit / Losses over the entire period.
-  // Adding up the money
-  // Keep a rolling total
-  // Need a variable to store the rolling total
-  // for loop to iterate over the array
-    // Inside that for loop, access position 1 of each array element to get the numbers
+// Adding up the money
+// Keep a rolling total
+// Need a variable to store the rolling total
+// for loop to iterate over the array
+// Inside that for loop, access position 1 of each array element to get the numbers
 
-// The average of the changes in Profit / Losses over the entire period.
-// You will need to track what the total change in profits are from month to month and then find the average.
-// (Total / Number of months)
+    let net_total = 0;
+    for (let i = 0; i < finances.length; i++) {
+      net_total += finances[i][1];
+    }
+    console.log("Total: " + net_total)
+
+
+//? The average of the changes in Profit / Losses over the entire period.
+//? You will need to track what the total change in profits are from month to month and then find the average.
+//? (Total / Number of months)
 
 // The greatest increase in profits(date and amount) over the entire period.
 
