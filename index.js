@@ -87,12 +87,16 @@ var finances = [
 ['Feb-2017', 671099]
 ];
 
-// Your task is to write JavaScript code that analyzes the records to calculate each of the following:
+// TODO: PseudoCode: Task is to write JavaScript code that analyzes the records to calculate each of the following:
 
 // The total number of months included in the dataset.
   // Count up how many things are in the array
   // array.length
   // Need a variable to store the value of array.length
+
+    console.log("Financial Analysis \n------------------")
+    monthsTotal = finances.length
+    console.log(monthsTotal)
 
 // The net total amount of Profit / Losses over the entire period.
   // Adding up the money
