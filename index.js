@@ -110,7 +110,7 @@ for (let i = 0; i < finances.length; i++) {
   netTotal += finances[i][1];
 }
 
-console.log("Total: " + netTotal);
+console.log("Total: $" + netTotal);
 
 //? The average of the changes in Profit / Losses over the entire period.
 //? You will need to track what the total change in profits are from month to month and then find the average.
@@ -124,7 +124,7 @@ for (let i = 1; i < finances.length; i++) {
 let averageChange = totalChange / (finances.length - 1);
 averageChange = averageChange.toFixed(2);
 
-console.log("Average Change: " + averageChange);
+console.log("Average Change: $" + averageChange);
 
 
 //* The greatest increase in profits(date and amount) over the entire period.
@@ -143,6 +143,9 @@ console.log("Average Change: " + averageChange);
 // greatest[1] = changeArr[i-1]
 // If it's lower than what's already stored in greatest-loss variable, reassign that variable to equal finances[i]
 
+//? Add up the total in the new 'changes' array
+
+
 //! The greatest increase in profits(date and amount) over the entire period.
 
 let highestProfit = {
@@ -159,7 +162,7 @@ for (let i = 1; i < finances.length; i++) {
 
 let changeArr = [];
 changeArr.push(highestProfit);
-console.log("Greatest Increase: " + highestProfit.date + " " + highestProfit.amount);
+console.log("Greatest Increase: " + highestProfit.date + " $" + highestProfit.amount);
 
 
 //!The greatest decrease in losses(date and amount) over the entire period.
@@ -178,18 +181,8 @@ for (let i = 1; i < finances.length; i++) {
 }
 
 changeArr.push(lowestProfit);
-console.log("Greatest Decrease: " + lowestProfit.date + " " + lowestProfit.amount);
+console.log("Greatest Decrease: " + lowestProfit.date + " $" + lowestProfit.amount);
 
 
-//? Add up the total in the new 'changes' array
-//? Need a variable to store the rolling total for this array that's different that the rolling total of profits
-//? for loop to iterate over the changes array
-//? add each element in turn to the rolling total
 
-// Take that 'total changes amount' variable and divide it by the number of elements in the array
-// Look up how to limit the answer to two decimal points
 
-// Sample decrementing for loop
-// for (let i = arr.length - 1; i > 0; i--) {
-
-// }
