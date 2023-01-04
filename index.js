@@ -94,7 +94,15 @@ var finances = [
 //! array.length
 //! Need a variable to store the value of array.length
 
-console.log("Financial Analysis \n--------------------------");
+console.log(
+  "%cFinancial Analysis",
+  "color:#DC0073;font-weight: bold;font-size: 16px;"
+);
+console.log(
+  "%c----------------------------",
+  "color:#008BF8;font-weight: bold;"
+);
+
 let monthsTotal = finances.length;
 console.log("Total Months: " + monthsTotal);
 
@@ -118,14 +126,13 @@ console.log("Total: $" + netTotal);
 
 let totalChange = 0;
 for (let i = 1; i < finances.length; i++) {
-  totalChange += finances[i][1] - finances[i-1][1];
+  totalChange += finances[i][1] - finances[i - 1][1];
 }
 
 let averageChange = totalChange / (finances.length - 1);
 averageChange = averageChange.toFixed(2);
 
 console.log("Average Change: $" + averageChange);
-
 
 //* The greatest increase in profits(date and amount) over the entire period.
 //* The greatest decrease in losses(date and amount) over the entire period.
@@ -145,16 +152,15 @@ console.log("Average Change: $" + averageChange);
 
 //? Add up the total in the new 'changes' array
 
-
 //! The greatest increase in profits(date and amount) over the entire period.
 
 let highestProfit = {
   date: finances[0][0],
-  amount: finances[0][1] - finances[1][1]
+  amount: finances[0][1] - finances[1][1],
 };
 for (let i = 1; i < finances.length; i++) {
-  let change = finances[i][1] - finances[i-1][1];
-  if (change > highestProfit .amount) {
+  let change = finances[i][1] - finances[i - 1][1];
+  if (change > highestProfit.amount) {
     highestProfit.date = finances[i][0];
     highestProfit.amount = change;
   }
@@ -162,18 +168,19 @@ for (let i = 1; i < finances.length; i++) {
 
 let changeArr = [];
 changeArr.push(highestProfit);
-console.log("Greatest Increase: " + highestProfit.date + " $" + highestProfit.amount);
-
+console.log(
+  "Greatest Increase: " + highestProfit.date + " $" + highestProfit.amount
+);
 
 //!The greatest decrease in losses(date and amount) over the entire period.
 
-let lowestProfit =  {
+let lowestProfit = {
   date: finances[0][0],
-  amount: finances[0][1] - finances[1][1]
+  amount: finances[0][1] - finances[1][1],
 };
 
 for (let i = 1; i < finances.length; i++) {
-  let change = finances[i][1] - finances[i-1][1];
+  let change = finances[i][1] - finances[i - 1][1];
   if (change < lowestProfit.amount) {
     lowestProfit.date = finances[i][0];
     lowestProfit.amount = change;
@@ -181,8 +188,6 @@ for (let i = 1; i < finances.length; i++) {
 }
 
 changeArr.push(lowestProfit);
-console.log("Greatest Decrease: " + lowestProfit.date + " $" + lowestProfit.amount);
-
-
-
-
+console.log(
+  "Greatest Decrease: " + lowestProfit.date + " $" + lowestProfit.amount
+);
