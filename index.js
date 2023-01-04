@@ -134,8 +134,8 @@ averageChange = averageChange.toFixed(2);
 
 console.log("Average Change: $" + averageChange);
 
-//* The greatest increase in profits(date and amount) over the entire period.
-//* The greatest decrease in losses(date and amount) over the entire period.
+//! The greatest increase in profits(date and amount) over the entire period.
+//! The greatest decrease in losses(date and amount) over the entire period.
 
 // Total up the differences between each pair of adjoining months & divide by number of array elements
 // for loop starting with i = 1
@@ -152,7 +152,7 @@ console.log("Average Change: $" + averageChange);
 
 //? Add up the total in the new 'changes' array
 
-//! The greatest increase in profits(date and amount) over the entire period.
+//TODO: The greatest increase in profits(date and amount) over the entire period.
 
 let highestProfit = {
   date: finances[0][0],
@@ -169,10 +169,10 @@ for (let i = 1; i < finances.length; i++) {
 let changeArr = [];
 changeArr.push(highestProfit);
 console.log(
-  "Greatest Increase: " + highestProfit.date + " $" + highestProfit.amount
+  "Greatest Increase: " + highestProfit.date + " %c$(" + highestProfit.amount +")", "color:#38b000; "
 );
 
-//!The greatest decrease in losses(date and amount) over the entire period.
+//TODO: The greatest decrease in losses(date and amount) over the entire period.
 
 let lowestProfit = {
   date: finances[0][0],
@@ -189,5 +189,5 @@ for (let i = 1; i < finances.length; i++) {
 
 changeArr.push(lowestProfit);
 console.log(
-  "Greatest Decrease: " + lowestProfit.date + " $" + lowestProfit.amount
+  "Greatest Decrease: " + lowestProfit.date + " %c$(" + lowestProfit.amount +")", "color:red;"
 );
