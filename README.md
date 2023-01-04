@@ -33,6 +33,16 @@ The objective is to develop a program for analyzing the financial records of a c
 
 * The greatest decrease in losses (date and amount) over the entire period.
 
-### Deployment:
-**Link:** https://kingjessie.github.io/Console-Finances
 
+## ScreenShot:
+
+
+### Img-1:
+
+![index.html screenshot](/images/Screenshot%202023-01-04%20at%2000.48.21.png)
+
+### Img-2:
+![index.html screenshot](/images/Screenshot%202023-01-04%20at%2000.49.15.png)
+
+## Deployment:
+**Link:** https://kingjessie.github.io/Console-Finances
